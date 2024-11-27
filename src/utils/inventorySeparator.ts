@@ -10,7 +10,6 @@ export interface inventoryColumn {
   kategori: string;
   kondisi: string;
   kuantitas: number;
-  paymentMethod: string;
   imageUrl: string;
   status: string;
 }
@@ -32,7 +31,6 @@ export async function inventorySeparator(id: string) {
       kategori: inventory.kategori,
       kondisi: 'baik',
       kuantitas: inventory.totalKuantitas,
-      paymentMethod: inventory.paymentMethod,
       imageUrl: inventory.imageUrl || '',
       status: 'Available',
     });
@@ -46,7 +44,6 @@ export async function inventorySeparator(id: string) {
           ? loanRequest.returnedCondition
           : 'baik',
         kuantitas: loanRequest.kuantitas,
-        paymentMethod: inventory.paymentMethod,
         imageUrl: inventory.imageUrl || '',
         status:
           loanRequest.status === RequestStatus.Delivered
@@ -123,7 +120,6 @@ export async function inventorySeparator(id: string) {
         kategori: inventory.kategori,
         kondisi: 'baik',
         kuantitas: totalAvailableBaik,
-        paymentMethod: inventory.paymentMethod,
         imageUrl: inventory.imageUrl || '',
         status: 'Available',
       });

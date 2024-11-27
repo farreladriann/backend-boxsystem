@@ -21,7 +21,7 @@ export class AdminController {
     next: NextFunction,
   ) {
     try {
-      const { name, totalKuantitas, kategori, paymentMethod } = req.body;
+      const { name, totalKuantitas, kategori } = req.body;
       if (!name || !totalKuantitas || !kategori)
         throw createHttpError(400, 'All fields are required');
 
@@ -34,7 +34,6 @@ export class AdminController {
         name,
         totalKuantitas,
         kategori,
-        paymentMethod,
         imageUrl,
       });
 
