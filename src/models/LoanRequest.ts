@@ -30,7 +30,7 @@ export class LoanRequest {
   @prop({ required: true, ref: () => User })
   public userId!: Ref<User>;
 
-  @prop({ required: true, unique: true })
+  @prop({ required: true })
   public name!: string;
 
   @prop({ required: true })
